@@ -4,8 +4,10 @@ from discord.ext import commands
 import youtube_dl
 import os
 
-client = commands.Bot(command_prefix="~")
 Token = "YOUR_TOKEN"
+YOUR_PREFIX = "~"
+client = commands.Bot(command_prefix=YOUR_PREFIX)
+
 
 players = {}
 music = DiscordUtils.Music()
