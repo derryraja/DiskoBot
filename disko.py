@@ -5,7 +5,7 @@ import youtube_dl
 import os
 
 client = commands.Bot(command_prefix="~")
-Token = "ODU2ODEzNjA1MjYwMzYxNzM4.YNGf2g.ftn-D8xek47mnngi6ggyJiEQ97g"
+Token = "YOUR_TOKEN"
 
 players = {}
 music = DiscordUtils.Music()
