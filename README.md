@@ -6,12 +6,13 @@ Simply download this file and do the following changes.
 ### Installation
 
 ```
-client = commands.Bot(command_prefix="YOUR_PREFIX")
 Token = "YOUR_TOKEN"
+YOUR_PREFIX = "~"
+client = commands.Bot(command_prefix=YOUR_PREFIX)
 ```
 
 - `YOUR_TOKEN`, the token of the bot available on the [Discord Developers](https://discord.com/developers/applications) section.
-- `command_prefix="YOUR_PREFIX"`, the prefix that will be set to use the bot. (e.g "!", "$", ".", "~")
+- `YOUR_PREFIX = "~"`, the prefix that will be set to use the bot and access commands. (e.g "!", "$", ".", "~")
 
 Install all the dependencies using the interpreter. Run the Disko.py to turn on the bot!
 
