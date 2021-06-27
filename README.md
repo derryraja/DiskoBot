@@ -1,7 +1,7 @@
 # disko.py
 
 Disko Bot, is a Discord Music Bot that not only plays music directly from Youtube but also downloads the audio.mp3 file in the source folder.
-Simply download this file and do the following changes. 
+Create a new application at [Discord Developer Portal](https://discord.com/developers/applications), and then select 'Add Bot'.
 
 ### Installation
 
@@ -11,7 +11,7 @@ YOUR_PREFIX = "~"
 client = commands.Bot(command_prefix=YOUR_PREFIX)
 ```
 
-- `YOUR_TOKEN`, the token of the bot available on the [Discord Developers](https://discord.com/developers/applications) section.
+- `YOUR_TOKEN`, the token of the bot available on the [Discord Developers](https://discord.com/developers/applications) section once you created the bot. Simply copy and paste it here.
 - `YOUR_PREFIX = "~"`, the prefix that will be set to use the bot and access commands. (e.g "!", "$", ".", "~")
 
 Install all the dependencies using the interpreter. Run the Disko.py to turn on the bot!
@@ -24,3 +24,5 @@ Install all the dependencies using the interpreter. Run the Disko.py to turn on 
 - `YOUR_PREFIX`stop, stops playing the music.
 - `YOUR_PREFIX`join, joins the voice channel.
 - `YOUR_PREFIX`server, displays server information.
+
+Hope you like it! ❤️
