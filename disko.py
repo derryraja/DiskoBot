@@ -15,6 +15,19 @@ players = {}
 music = DiscordUtils.Music()
 
 
+@client.event
+async def on_message(message):
+    """ some on_message command """
+    if message.author.id == client.user.id:
+        return
+    msg_content = message.content.lower()
+
+    curseWord = ['curse1', 'curse2']  # deletes these words
+
+    if any(word in msg_content for word in curseWord):
+        await message.delete()
+        
+        
 @client.command()
 async def server(ctx):
     name = str(ctx.guild.name)
@@ -41,6 +54,18 @@ async def server(ctx):
     await ctx.send(embed=embed)
 
 
+@client.command()
+async def join(ctx):
+    if ctx.author.voice is None:
+        await ctx.send("You are not in a voice channel!")
+    voice_channel = ctx.author.voice.channel
+    if ctx.voice_client is None:
+        await voice_channel.connect()
+        await ctx.send("disko has arrived!")
+    else:
+        await ctx.voice_client.move_to(voice_channel)
+        
+        
 @client.command()
 async def play(ctx, url: str):
     await ctx.send("Getting ready to play...")
@@ -74,28 +99,6 @@ async def play(ctx, url: str):
 
 
 @client.command()
-async def join(ctx):
-    if ctx.author.voice is None:
-        await ctx.send("You are not in a voice channel!")
-    voice_channel = ctx.author.voice.channel
-    if ctx.voice_client is None:
-        await voice_channel.connect()
-        await ctx.send("disko has arrived!")
-    else:
-        await ctx.voice_client.move_to(voice_channel)
-
-
-@client.command()
-async def leave(ctx):
-    voice = discord.utils.get(client.voice_clients, guild=ctx.guild)
-    if voice.is_connected():
-        await voice.disconnect()
-        await ctx.send("till we meet again...")
-    else:
-        await ctx.send("disko is not connected to a voice channel.")
-
-
-@client.command()
 async def pause(ctx):
     voice = discord.utils.get(client.voice_clients, guild=ctx.guild)
     if voice.is_playing():
@@ -121,6 +124,16 @@ async def stop(ctx):
     voice.stop()
     await ctx.send("disko has been stopped.")
     os.remove("song.mp3")
+    
+    
+@client.command()
+async def leave(ctx):
+    voice = discord.utils.get(client.voice_clients, guild=ctx.guild)
+    if voice.is_connected():
+        await voice.disconnect()
+        await ctx.send("till we meet again...")
+    else:
+        await ctx.send("disko is not connected to a voice channel.")
 
    
 @client.command(pass_context=True)
@@ -132,5 +145,6 @@ async def meme(ctx):
             res = await r.json()
             embed.set_image(url=res['data']['children'][random.randint(0, 25)]['data']['url'])
             await ctx.send(embed=embed)
+            
 
 client.run(Token)
