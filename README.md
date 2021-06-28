@@ -24,5 +24,6 @@ Install all the dependencies using the interpreter. Run the Disko.py to turn on 
 - `YOUR_PREFIX`stop, stops playing the music.
 - `YOUR_PREFIX`join, joins the voice channel.
 - `YOUR_PREFIX`server, displays server information.
+- `YOUR_PREFIX`meme, shares random meme from r/dankmemes on Reddit.
 
 Hope you like it! ❤️
