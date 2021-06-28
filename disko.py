@@ -3,6 +3,8 @@ import DiscordUtils
 from discord.ext import commands
 import youtube_dl
 import os
+import aiohttp
+import random
 
 Token = "YOUR_TOKEN"
 YOUR_PREFIX = "~"
