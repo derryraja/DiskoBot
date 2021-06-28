@@ -1,7 +1,9 @@
 # disko.py
 
 Disko Bot, is a Discord Music Bot that not only plays music directly from Youtube but also downloads the audio.mp3 file in the source folder.
-Create a new application at [Discord Developer Portal](https://discord.com/developers/applications), and then select 'Add Bot'.
+Create a new application at [Discord Developer Portal](https://discord.com/developers/applications), and then select 'Add Bot'. 
+
+Disko Bot also requires "manage messages" permissions on your server to use features like recognizing curse words and deleting them automatically.
 
 ### Installation
 
