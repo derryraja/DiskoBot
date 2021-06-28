@@ -120,5 +120,15 @@ async def stop(ctx):
     await ctx.send("disko has been stopped.")
     os.remove("song.mp3")
 
+   
+@client.command(pass_context=True)
+async def meme(ctx):
+    embed = discord.Embed(title="Haha, Meme go brr", description="Here's your little meme")
+
+    async with aiohttp.ClientSession() as cs:
+        async with cs.get('https://www.reddit.com/r/dankmemes/new.json?sort=hot') as r:
+            res = await r.json()
+            embed.set_image(url=res['data']['children'][random.randint(0, 25)]['data']['url'])
+            await ctx.send(embed=embed)
 
 client.run(Token)
